@@ -1,0 +1,54 @@
+package features;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import driver.AutoDriver;
+import driver.AutoEnumDriver;
+import tools.Time;
+
+public class ObjectWebDriver {
+
+	public static WebDriver driver;
+
+	@Given("^instanciar o WebDriver$")
+	public void instanciarOWebDriver() throws Throwable {
+		// Instanciar o WebDriver e acessar o site
+		AutoDriver autoDriver = new AutoDriver(AutoEnumDriver.CHROME, null);
+		driver = autoDriver.getDriver();
+		Time.wait(1);
+
+		// Assert da Tela de Tricentis_logo
+		String tituloDaTelaPerfil = driver.findElement(By.xpath(".//*[text() = 'Vehicle Insurance Application']"))
+				.getText();
+		assertEquals("Vehicle Insurance Application", tituloDaTelaPerfil);
+		Time.wait(1);
+	}
+
+	@When("^criar os objetos das classes$")
+	public void criarOsObjetosDasClasses() throws Throwable {
+		/*
+		// Criar objeto para a classe EnterVehicleData
+		new EnterVehicleData(driver);
+		 */
+		
+		// Criar objeto para a classe EnterVehicleData
+		new EnterInsurantData(driver);
+
+		// Criar objeto para a classe EnterVehicleData
+		new EnterProductData(driver);
+		
+	}
+
+	@Then("^fechar navegador Web$")
+	public void fecharNavegadorWeb() throws Throwable {
+		driver.close();
+		driver.quit();
+
+	}
+}

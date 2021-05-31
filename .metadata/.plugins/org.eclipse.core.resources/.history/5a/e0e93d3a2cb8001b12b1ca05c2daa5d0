@@ -1,0 +1,46 @@
+package features;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class EnterVehicleData {
+
+	@Given("^acessar a pagina Web$")
+	public void acessarAPaginaWeb() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Given("^clicar o frame Enter Vehicle Data$")
+	public void clicarOFrameEnterVehicleData() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^exibir os campos para informar os Dados do Veiculo$")
+	public void exibirOsCamposParaInformarOsDadosDoVeiculo() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^permitir preencher ou selecionar os dados dos campos$")
+	public void permitirPreencherOuSelecionarOsDadosDosCampos() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^clicar no botao Next$")
+	public void clicarNoBotaoNext() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^o sistema deve redirecionar para o frame Enter Insurant Data$")
+	public void oSistemaDeveRedirecionarParaOFrameEnterInsurantData() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+}

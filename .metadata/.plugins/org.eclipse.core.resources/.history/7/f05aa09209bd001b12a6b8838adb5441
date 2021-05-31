@@ -1,0 +1,54 @@
+package features;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import tools.Time;
+
+public class SendQuote {
+	
+	WebDriver driver;
+	// Construtor que será chamado automaticamente assim que o objeto da classe for criado
+	public SendQuote () {
+		this.driver =  ObjectWebDriver.getInstance().getDriver();
+	}
+	
+	@Given("^acessar o frame Send Quote igual a quatro campos$")
+	public void acessar_o_frame_Send_Quote_igual_a_quatro_campos() throws Throwable {
+		// Selecionar o Select Price Option = 4 Campos para preencher
+		driver.findElement(By.id("sendquote")).click();
+		Assert.assertEquals("4",
+		driver.findElement(By.xpath("//*[@id=\"sendquote\"]//span[@class = \"counter\"]")).getText());
+		Time.wait(1);
+	}
+
+	@When("^preencher ou selecionar os dados dos campos de envio da cotacao$")
+	public void preencher_ou_selecionar_os_dados_dos_campos_de_envio_da_cotacao() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^clicar o frame Send Quote igual a zero campos$")
+	public void clicar_o_frame_Send_Quote_igual_a_zero_campos() throws Throwable {
+		// Selecionar o Select Price Option = 4 Campos para preencher
+		driver.findElement(By.id("sendquote")).click();
+		Assert.assertEquals("0",
+		driver.findElement(By.xpath("//*[@id=\"sendquote\"]//span[@class = \"counter zero\"]")).getText());
+		Time.wait(1);
+	}
+
+	@Then("^clicar no botao Send para enviar os dados e exibir a mensagem de alerta de confirmacao de envio$")
+	public void clicar_no_botao_Send_para_enviar_os_dados_e_exibir_a_mensagem_de_alerta_de_confirmacao_de_envio() throws Throwable {
+		// BTN Send
+		driver.findElement(By.id("sendemail")).click();
+		Time.wait(1);
+		
+		//*****
+	}
+
+}
